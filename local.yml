@@ -1,0 +1,20 @@
+version: '3'
+
+volumes:
+  bookstore_server_database: {}
+
+services:
+  bookstore_server:
+    build:
+      context: .
+      dockerfile: ./compose/local/django/Dockerfile
+    image: bookstore_local_django
+    container_name: bookstore_server
+    volumes:
+      - .:/app
+    env_file:
+      - ./.envs/.local/.django
+      - ./.envs/.local/.postgres
+    ports:
+      - "8000:8000"
+    command: /start
