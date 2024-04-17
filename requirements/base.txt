@@ -5,3 +5,4 @@ django==4.0.5 # https://pypi.org/project/Django/
 
 # Django REST Framework
 djangorestframework==3.13.1  # https://pypi.org/project/djangorestframework/
+sqlparse>=0.5.0 # not directly required, pinned by Snyk to avoid a vulnerability
